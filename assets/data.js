@@ -36,6 +36,16 @@ window.TCDP = {
     contact: { phone: "0461 340654", email: "vezzano@biblio.tn.it" },
     disclaimer: "Il programma potrebbe subire variazioni.",
     brochure: "assets/opuscolo-tutti-i-colori-della-pace-2026.pdf",
+    cover: "assets/locandina-cover.webp",
+    intro: {
+      by: "Sonia Spallino, assessora alla cultura e per l'educazione alla pace",
+      paragraphs: [
+        "La ventiquattresima edizione della manifestazione Tutti i colori della pace giunge in un momento molto significativo per il comune di Vallelaghi, il decimo anniversario della sua istituzione, esito di un processo amministrativo complesso che aprì una fase nuova e un nuovo cammino per la comunità e il suo territorio. A dieci anni da quella scelta il Comune, con decisione unanime dei suoi amministratori, ha aderito al Coordinamento Nazionale Enti Locali per la Pace e i Diritti Umani, impegnandosi ad essere Città per la pace: un appellativo che riconosce come stella polare per la comunità il compito di costruire e diffondere una cultura che nutra e alimenti il rispetto dell'altro, l'accoglienza, il dialogo, la non-violenza, la custodia del bene comune, la cura reciproca e relazioni generose e autentiche.",
+        "Gli appuntamenti che si susseguiranno nelle prossime settimane vogliono essere occasioni per riflettere insieme su questi valori e per farne esperienza: film, libri, spettacoli, laboratori, passeggiate, conferenze sono tutti attraversati da un sottile filo rosso, il richiamo all'ascolto, all'impegno per e con gli altri, alla sfida di costruire una società più equa ed attenta ai bisogni, ai diritti e ai talenti di tutti e di tutte, senza esclusioni ed egoismi.",
+        "Grazie a quanti hanno contribuito e contribuiranno alla realizzazione della manifestazione: al Forum trentino per la Pace e i Diritti Umani, alla Commissione Culturale Intercomunale della Comunità della Valle dei Laghi, alle Associazioni, agli esperti, ai tanti ospiti che giungeranno anche da lontano per condividere pensieri e saperi; grazie alle bibliotecarie, Claudia Dalla Zotta e Alessia Travaglia, per il prezioso e insostituibile supporto organizzativo, per le suggestioni e le proposte orientate alla pace che quotidianamente offrono alla comunità.",
+        "E che l'arrivo a Vallelaghi della lampada di Assisi possa rappresentare per tutte e tutti ispirazione e richiamo ad un agire che metta al centro i valori e la gioia della condivisione e del riconoscimento del valore dell'altro, contro la logica dell'indifferenza, dell'intolleranza e della sopraffazione.",
+      ],
+    },
   },
 
   categories: {
@@ -55,6 +65,7 @@ window.TCDP = {
   events: [
     {
       id: "20260913-francesco",
+      image: "assets/eventi/20260913-francesco.png",
       title: "E Francesco cammina, canta, danza",
       subtitle: "Reading letterario su San Francesco d'Assisi",
       category: "teatro",
@@ -81,6 +92,7 @@ window.TCDP = {
     },
     {
       id: "20260918-mivedi",
+      image: "assets/eventi/20260918-mivedi.png",
       title: "Mi vedi? Tra argilla e luce",
       subtitle: "Identità, sguardi e storie di giovani migranti",
       category: "reti",
@@ -95,6 +107,7 @@ window.TCDP = {
     },
     {
       id: "20260921-religiontoday",
+      image: "assets/eventi/20260921-religiontoday.png",
       title: "Religion Today Film Festival",
       subtitle: "Cineforum: «The Cow» e «There Is Another Way»",
       category: "cineforum",
@@ -109,6 +122,7 @@ window.TCDP = {
     },
     {
       id: "20260925-bihac",
+      image: "assets/eventi/20260925-bihac.png",
       title: "Nella giusta direzione",
       subtitle: "Da Bihać al Trentino con i migranti che percorrono la rotta balcanica",
       category: "mostre",
@@ -149,6 +163,7 @@ window.TCDP = {
     },
     {
       id: "20260926-giro-empatia",
+      image: "assets/eventi/20260926-giro-empatia.png",
       title: "Empatia. L'arte di saper abitare le emozioni",
       subtitle: "Giro d'Italia per la pace · Spettacolo con Andrew Faber",
       category: "giro",
@@ -163,6 +178,7 @@ window.TCDP = {
     },
     {
       id: "20260927-sanvili",
+      image: "assets/eventi/20260927-sanvili.png",
       title: "Il cammino di San Vili",
       subtitle: "Ecomuseo della Valle dei Laghi in cammino",
       category: "natura",
@@ -189,6 +205,7 @@ window.TCDP = {
     },
     {
       id: "20260929-raffaelli",
+      image: "assets/eventi/20260929-raffaelli.png",
       title: "Si fa presto a dire pace",
       subtitle: "Presentazione del libro di Mario Raffaelli (Edizioni Studium)",
       category: "incontri",
@@ -201,6 +218,7 @@ window.TCDP = {
     },
     {
       id: "20260930-maschere",
+      image: "assets/eventi/20260930-maschere.png",
       title: "Il villaggio delle maschere",
       subtitle: "Un viaggio alla scoperta del proprio volto",
       category: "incontri",
@@ -213,6 +231,7 @@ window.TCDP = {
     },
     {
       id: "20261002-punire",
+      image: "assets/eventi/20261002-punire.png",
       title: "Punire o riparare?",
       subtitle: "Presentazione del libro (Castelvecchi editore)",
       category: "incontri",
@@ -226,6 +245,7 @@ window.TCDP = {
     },
     {
       id: "20261003-tombola",
+      image: "assets/eventi/20261003-tombola.png",
       title: "La tombola dei libri dei diritti e della pace",
       subtitle: "Giochi di pace",
       category: "giochi",
@@ -238,6 +258,7 @@ window.TCDP = {
     },
     {
       id: "20261004-cammina",
+      image: "assets/eventi/20261004-cammina.png",
       title: "Vallelaghi cammina_per la pace",
       subtitle: "2ª edizione · Camminata attraverso il paese",
       category: "insieme",
@@ -251,6 +272,7 @@ window.TCDP = {
     },
     {
       id: "20261009-vuoifarepace",
+      image: "assets/eventi/20261009-vuoifarepace.png",
       title: "Vuoi fare pace?",
       subtitle: "Libro-journal per ragazze e ragazzi (Multimage editrice)",
       category: "incontri",
@@ -264,6 +286,7 @@ window.TCDP = {
     },
     {
       id: "20261010-camilla",
+      image: "assets/eventi/20261010-camilla.png",
       title: "La casetta di Camilla",
       subtitle: "Teatro per bambine e bambini",
       category: "teatro",
@@ -278,6 +301,7 @@ window.TCDP = {
     },
     {
       id: "20261012-traduemondi",
+      image: "assets/eventi/20261012-traduemondi.png",
       title: "Tra due mondi",
       subtitle: "Cineforum",
       category: "cineforum",
@@ -291,6 +315,7 @@ window.TCDP = {
     },
     {
       id: "20261014-guerraosalute",
+      image: "assets/eventi/20261014-guerraosalute.png",
       title: "Guerra o salute",
       subtitle: "Dalle evidenze scientifiche alla promozione della pace (Il Pensiero Scientifico editore)",
       category: "incontri",
@@ -303,6 +328,7 @@ window.TCDP = {
     },
     {
       id: "20261017-orizzonti",
+      image: "assets/eventi/20261017-orizzonti.png",
       title: "Orizzonti",
       subtitle: "Presentazione del libro di Laura Targa (Edizioni Del Faro)",
       category: "reti",
@@ -315,6 +341,7 @@ window.TCDP = {
     },
     {
       id: "20261018-deledda",
+      image: "assets/eventi/20261018-deledda.png",
       title: "Omaggio a Grazia Deledda",
       subtitle: "Con il Gruppo Culturale «Nereo Cesare Garbari»",
       category: "omaggio",
@@ -339,6 +366,7 @@ window.TCDP = {
     },
     {
       id: "20261021-quadernoarmeno",
+      image: "assets/eventi/20261021-quadernoarmeno.png",
       title: "Quaderno Armeno",
       subtitle: "Presentazione del libro (Nous editrice)",
       category: "incontri",
@@ -351,6 +379,7 @@ window.TCDP = {
     },
     {
       id: "20261022-nonviolenti",
+      image: "assets/eventi/20261022-nonviolenti.png",
       title: "Difendere la pace con mezzi non violenti",
       subtitle: "I costi della difesa armata e i vantaggi del peacebuilding civile",
       category: "approfondimenti",
@@ -375,6 +404,7 @@ window.TCDP = {
     },
     {
       id: "20261026-chiara",
+      image: "assets/eventi/20261026-chiara.png",
       title: "Chiara",
       subtitle: "Cineforum",
       category: "cineforum",
@@ -389,6 +419,7 @@ window.TCDP = {
     },
     {
       id: "20261028-paceinscena",
+      image: "assets/eventi/20261028-paceinscena.png",
       title: "La pace in scena",
       subtitle: "Microfono aperto di poesia, per la giustizia e l'equità",
       category: "insieme",

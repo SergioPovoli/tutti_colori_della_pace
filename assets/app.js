@@ -120,6 +120,14 @@
     META.organizers.forEach(function (o) {
       var li = document.createElement("li"); li.textContent = o; ul.appendChild(li);
     });
+
+    // Saluto dell'amministrazione (dall'opuscolo)
+    var sb = document.getElementById("salutoBody");
+    if (sb && META.intro) {
+      sb.innerHTML =
+        META.intro.paragraphs.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
+        '<p class="saluto-sign">' + esc(META.intro.by) + "</p>";
+    }
   }
 
   /* ---------- chip categorie ---------- */
@@ -186,12 +194,15 @@
           '<span class="where">' + esc(ev.venue) + (ev.locality ? " · " + esc(ev.locality) : "") + "</span>" +
           whenRange +
         "</div>" +
-        (ev.description ? '<p class="event-desc">' + esc(clip(ev.description, 220)) + "</p>" : "") +
+        (ev.description ? '<p class="event-desc">' + esc(clip(ev.description, 200)) + "</p>" : "") +
+        '<div class="event-actions">' +
+          '<button type="button" class="mini-btn" data-act="ics">＋ Calendario</button>' +
+          '<button type="button" class="mini-btn" data-act="open">Dettagli</button>' +
+        "</div>" +
       "</div>" +
-      '<div class="event-actions">' +
-        '<button type="button" class="mini-btn" data-act="ics">＋ Calendario</button>' +
-        '<button type="button" class="mini-btn" data-act="open">Dettagli</button>' +
-      "</div>";
+      (ev.image
+        ? '<img class="event-thumb" src="' + esc(ev.image) + '" alt="" loading="lazy" decoding="async">'
+        : "");
 
     art.addEventListener("click", function (e) {
       var act = e.target.closest("[data-act]");
@@ -333,6 +344,12 @@
         "<h3>" + esc(ev.title) + "</h3>" +
         (ev.subtitle ? '<p class="d-sub">' + esc(ev.subtitle) + "</p>" : "") +
       "</div>" +
+      (ev.image
+        ? '<figure class="dialog-figure" style="--cat:' + ev._cat.color + '">' +
+            '<img src="' + esc(ev.image) + '" alt="' + esc(ev.title) + '" decoding="async">' +
+            '<figcaption>Immagine tratta dall\'opuscolo del festival</figcaption>' +
+          "</figure>"
+        : "") +
       '<div class="dialog-body">' +
         "<dl>" +
           "<dt>Quando</dt><dd>" + esc(when) + (ev.free ? ' <span class="badge-free">ingresso libero</span>' : "") + "</dd>" +
@@ -344,16 +361,14 @@
       "</div>" +
       '<div class="dialog-actions">' +
         '<button type="button" class="btn btn-solid" data-dlg="ics">＋ Aggiungi al calendario (.ics)</button>' +
-        '<button type="button" class="btn btn-ghost" data-dlg="maps">Apri la mappa</button>' +
+        '<a class="btn btn-ghost" data-dlg="maps" target="_blank" rel="noopener"' +
+          ' href="https://www.google.com/maps/search/?api=1&query=' +
+          encodeURIComponent(ev.venue + ", " + (ev.locality || "Vallelaghi") + ", Vallelaghi TN, Italia") +
+          '">Apri in Google Maps</a>' +
       "</div>";
 
     document.getElementById("dialogBody").querySelector('[data-dlg="ics"]')
       .addEventListener("click", function () { downloadICS([ev], "evento-" + ev.id); });
-    document.getElementById("dialogBody").querySelector('[data-dlg="maps"]')
-      .addEventListener("click", function () {
-        var q = encodeURIComponent(ev.venue + ", " + (ev.locality || "Vallelaghi") + ", Vallelaghi TN, Italia");
-        window.open("https://www.openstreetmap.org/search?query=" + q, "_blank", "noopener");
-      });
 
     if (typeof dlg.showModal === "function") dlg.showModal();
     else dlg.setAttribute("open", "");
