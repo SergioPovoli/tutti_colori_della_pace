@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutti i colori della pace — XXIV edizione · Calendario 2026</title>
+<meta name="description" content="Il calendario della XXIV edizione di «Tutti i colori della pace» a Vallelaghi (13 settembre – 28 ottobre 2026): film, libri, spettacoli, laboratori, passeggiate e conferenze. Filtrabile per categoria, esportabile in .ics e in PDF.">
+<meta name="author" content="Comune di Vallelaghi · Biblioteca Vallelaghi · Forum trentino per la Pace e i Diritti Umani">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tutti i colori della pace — XXIV edizione · Calendario 2026">
+<meta property="og:description" content="Il calendario del festival a Vallelaghi, 13 settembre – 28 ottobre 2026. Filtrabile per categoria, esportabile in .ics e in PDF.">
+<meta property="og:image" content="assets/locandina-cover.webp">
+<meta name="theme-color" content="#3E7C8B">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#programma">Salta al programma</a>
+
+<header class="site-header">
+  <div class="rainbow-band" aria-hidden="true"></div>
+  <div class="wrap header-grid">
+    <div class="header-text">
+      <p class="kicker">Comune di Vallelaghi · Valle dei Laghi (TN)</p>
+      <h1 class="wordmark">
+        <span class="wordmark-line-1">tutti i colori</span>
+        <span class="wordmark-line-2">della <em>pace</em></span>
+      </h1>
+      <p class="edition"><span class="edition-badge" id="editionBadge">2026 · XXIV edizione</span></p>
+      <p class="claim" id="claim"></p>
+      <p class="daterange" id="daterange"></p>
+      <div class="header-actions">
+        <a class="btn btn-solid" href="#programma">Vai al calendario</a>
+        <a class="btn btn-ghost" id="brochureLinkTop" href="assets/opuscolo-tutti-i-colori-della-pace-2026.pdf" download>Scarica l'opuscolo (PDF)</a>
+      </div>
+    </div>
+    <figure class="header-figure">
+      <img src="assets/locandina-cover.webp" alt="Locandina di «Tutti i colori della pace» 2026: un albero dai colori dell'arcobaleno con foglie a forma di cuore e una colomba in volo." width="1300" height="893">
+    </figure>
+  </div>
+</header>
+
+<main class="wrap" id="programma">
+
+  <section class="intro">
+    <h2 class="section-title">Il calendario del festival</h2>
+    <p class="intro-lead" id="introLead"></p>
+    <p class="disclaimer" id="disclaimer"></p>
+  </section>
+
+  <!-- ===== Barra strumenti ===== -->
+  <section class="toolbar" aria-label="Filtri e strumenti del calendario">
+    <div class="toolbar-row toolbar-search">
+      <label class="field search-field">
+        <span class="field-label">Cerca</span>
+        <input type="search" id="searchInput" placeholder="titolo, luogo, ospiti…" autocomplete="off">
+      </label>
+      <label class="field">
+        <span class="field-label">Luogo</span>
+        <select id="localitySelect">
+          <option value="">Tutte le frazioni</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label">Mese</span>
+        <select id="monthSelect">
+          <option value="">Tutto il festival</option>
+          <option value="2026-09">Settembre 2026</option>
+          <option value="2026-10">Ottobre 2026</option>
+        </select>
+      </label>
+      <div class="field view-toggle" role="group" aria-label="Tipo di visualizzazione">
+        <span class="field-label">Vista</span>
+        <div class="view-toggle-btns">
+          <button type="button" id="viewList" class="vt-btn is-active" aria-pressed="true">Elenco</button>
+          <button type="button" id="viewCalendar" class="vt-btn" aria-pressed="false">Calendario</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar-row toolbar-cats">
+      <span class="field-label cats-label">Categorie</span>
+      <div class="chips" id="categoryChips" role="group" aria-label="Filtra per categoria"></div>
+    </div>
+
+    <div class="toolbar-row toolbar-export">
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+      <div class="export-actions">
+        <button type="button" class="btn btn-ghost" id="resetBtn">Azzera filtri</button>
+        <button type="button" class="btn btn-ghost" id="printBtn">Stampa / Salva PDF</button>
+        <button type="button" class="btn btn-solid" id="icsBtn">Esporta calendario (.ics)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Vista Elenco ===== -->
+  <section id="listView" class="list-view" aria-label="Programma in elenco">
+    <div id="eventList"></div>
+    <p id="emptyState" class="empty-state" hidden>Nessun evento corrisponde ai filtri selezionati. <button type="button" class="linklike" id="emptyResetBtn">Azzera i filtri</button>.</p>
+  </section>
+
+  <!-- ===== Vista Calendario ===== -->
+  <section id="calendarView" class="calendar-view" aria-label="Programma in calendario" hidden>
+    <div id="calendarMonths"></div>
+  </section>
+
+</main>
+
+<!-- ===== Blocco per la stampa / PDF ===== -->
+<section id="printSheet" aria-hidden="true"></section>
+
+<footer class="site-footer">
+  <div class="rainbow-band" aria-hidden="true"></div>
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-title">Tutti i colori della pace</p>
+      <p class="footer-edition" id="footerEdition"></p>
+      <p class="footer-note" id="footerDisclaimer"></p>
+    </div>
+    <div>
+      <p class="footer-title">Informazioni</p>
+      <p><a id="footerPhone" href="#">—</a></p>
+      <p><a id="footerEmail" href="#">—</a></p>
+      <p><a href="assets/opuscolo-tutti-i-colori-della-pace-2026.pdf" download>Opuscolo completo (PDF)</a></p>
+      <p><a href="calendario-tutti-i-colori-della-pace-2026.ics">Calendario completo (.ics)</a></p>
+    </div>
+    <div>
+      <p class="footer-title">Promosso da</p>
+      <ul class="footer-orgs" id="footerOrgs"></ul>
+    </div>
+  </div>
+  <p class="footer-colophon">Sito informativo non ufficiale realizzato a partire dall'opuscolo del festival · Pagina statica ospitabile su GitHub Pages.</p>
+</footer>
+
+<!-- ===== Modale dettaglio evento ===== -->
+<dialog id="eventDialog" class="event-dialog">
+  <button type="button" class="dialog-close" id="dialogClose" aria-label="Chiudi">&times;</button>
+  <div id="dialogBody"></div>
+</dialog>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

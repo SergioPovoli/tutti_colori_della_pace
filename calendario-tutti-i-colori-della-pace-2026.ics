@@ -1,0 +1,542 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tutti i colori della pace//XXIV edizione 2026//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tutti i colori della pace 2026
+X-WR-TIMEZONE:Europe/Rome
+X-WR-CALDESC:Film\, libri\, spettacoli\, laboratori\, passeggiate e confe
+ renze per costruire e diffondere una cultura di pace.
+BEGIN:VTIMEZONE
+TZID:Europe/Rome
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260913-francesco@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260913T173000
+DTEND;TZID=Europe/Rome:20260913T190000
+SUMMARY:E Francesco cammina\, canta\, danza
+DESCRIPTION:Reading letterario su San Francesco d'Assisi\n\nLa storia del
+  santo patrono d'Italia narrata attraverso una visione personale e poetic
+ a. I fatti più salienti della sua vita\, letti da una voce narrante femm
+ inile\, si intrecciano con aneddoti\, disegni a inchiostro e musiche dal 
+ vivo. Una narrazione leggera\, ironica e profonda\, proprio come lo era F
+ rancesco.\n\nA cura di: Produzione Il teatro delle Quisquilie · Testo e 
+ schizzi: Wolftraud de Concini · Voce narrante: Barbara Deanesi · Musich
+ e originali di Olmo Chittò eseguite dal vivo alla chitarra da Francesca 
+ Buscemi · Regia e voce fuori campo: Massimo Lazzeri\n\nNote: Ingresso li
+ bero · Età consigliata: dai 12 anni\n\nIngresso libero.\n\n— Tutti i 
+ colori della pace · XXIV edizione · Il programma potrebbe subire variaz
+ ioni.
+LOCATION:Teatro di Padergnone\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Teatro
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260916-poverta@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260916T203000
+DTEND;TZID=Europe/Rome:20260916T220000
+SUMMARY:A proposito di povertà
+DESCRIPTION:Dialogo a più voci su pratiche di prossimità\n\nCosa vuol d
+ ire "povertà" oggi? Una riflessione su una condizione quanto mai attuale
+ \, sugli strumenti che ne mitigano gli effetti e sui gesti concreti che o
+ gnuno può mettere in atto per diffondere una cultura che promuova dignit
+ à ed equità.\n\nA cura di: Con Annalisa Pasini (Caritas Trento)\, Franc
+ a Zadra (ricercatrice sociale\, Università di Verona)\, Luca Sommadossi 
+ (Comunità della Valle dei Laghi) e la testimonianza delle Caritas Valle 
+ dei Laghi\n\n— Tutti i colori della pace · XXIV edizione · Il program
+ ma potrebbe subire variazioni.
+LOCATION:Teatro di Padergnone\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Approfondimenti
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260918-mivedi@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20261012
+SUMMARY:Mi vedi? Tra argilla e luce
+DESCRIPTION:Identità\, sguardi e storie di giovani migranti\n\nAttravers
+ o la costruzione di maschere d'argilla\, la fotografia e la narrazione\, 
+ i ragazzi hanno rielaborato simbolicamente parti del loro vissuto migrato
+ rio e il loro sogno di futuro. Una mostra che racconta storie spesso invi
+ sibili o distorte da pregiudizi e stereotipi.\n\nA cura di: Percorso di f
+ otografia e maschere d'argilla realizzato da un gruppo di minori stranier
+ i non accompagnati\, con la rete delle tutrici e dei tutori volontari · 
+ Con il patrocinio del Garante dei Diritti dei Minori\, della RATAA e del 
+ Consiglio Provinciale\n\nNote: Inaugurazione venerdì 18 settembre ore 18
+ .30 con Anna Berloffa (garante dei diritti dei minori di Trento) e Giusep
+ pe Tasin (curatore) · Visite con l'accompagnamento di tutori volontari\,
+  su prenotazione al 333 8597391\n\n— Tutti i colori della pace · XXIV 
+ edizione · Il programma potrebbe subire variazioni.
+LOCATION:Teatro Valle dei Laghi\, Vezzano\, Vallelaghi (TN)\, Italia
+CATEGORIES:Reti di pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260921-religiontoday@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260921T203000
+DTEND;TZID=Europe/Rome:20260921T224500
+SUMMARY:Religion Today Film Festival
+DESCRIPTION:Cineforum: «The Cow» e «There Is Another Way»\n\nUna sera
+ ta ispirata alla cultura della nonviolenza. «The Cow» (Pavo Marinković
+ \, Croazia\, 18') e il documentario «There Is Another Way» (Stephen Apk
+ on\, Svizzera/USA\, 67') su «Combatants for Peace»\, il gruppo di ex co
+ mbattenti israeliani e palestinesi che rifiutano di arrendersi alla viole
+ nza.\n\nA cura di: Nell'ambito della 29ª edizione della rassegna di cine
+ ma per il dialogo tra culture e religioni\, in collaborazione con il Foru
+ m trentino per la Pace e i Diritti Umani\n\nNote: Ingresso libero · Per 
+ saperne di più: www.rtff.it · Sarà presente il regista di «The Cow»\
+ n\nIngresso libero.\n\n— Tutti i colori della pace · XXIV edizione · 
+ Il programma potrebbe subire variazioni.
+LOCATION:Teatro di Padergnone\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Cineforum
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260925-bihac@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20261010
+SUMMARY:Nella giusta direzione
+DESCRIPTION:Da Bihać al Trentino con i migranti che percorrono la rotta 
+ balcanica\n\nPiù di una semplice esposizione: un viaggio lungo la fronti
+ era di Bihać\, capace di immergere chi la visita nell'atmosfera e nelle 
+ relazioni di quel luogo\, tra i rumori\, i sapori e le voci degli operato
+ ri e dei migranti. Per tornare a casa con la domanda più importante: cos
+ a possiamo fare noi\, oggi\, qui?\n\nA cura di: A cura del Centro Astalli
+  · Nasce da un viaggio in Bosnia Erzegovina del maggio 2022\, con l'acco
+ glienza del Jesuit Refugee Service e di padre Stanko Perica\n\nNote: Inau
+ gurazione con le classi terze venerdì 25 settembre in orario scolastico 
+ · Aperta al pubblico fino al 9 ottobre in orario scolastico\n\n— Tutti
+  i colori della pace · XXIV edizione · Il programma potrebbe subire var
+ iazioni.
+LOCATION:Aula Magna\, Scuola media «Bellesini»\, Vezzano\, Vallelaghi (
+ TN)\, Italia
+CATEGORIES:Mostre per la pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260926-giro-tende@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260926T093000
+DTEND;TZID=Europe/Rome:20260926T123000
+SUMMARY:Tende di pace
+DESCRIPTION:Giro d'Italia per la pace · Letture e laboratori per famigli
+ e\n\n20 tende a grandezza naturale a disposizione di grandi e piccoli al 
+ Parco Due Laghi\, con libri\, letture e laboratori creativi a tema. Nel m
+ unicipio di Vezzano (ore 10–12 e 16–18) è possibile consegnare un pe
+ nsiero o un disegno dedicati alla pace e realizzare una gru in origami.\n
+ \nA cura di: Giro d'Italia per la pace\, promosso dal Coordinamento Nazio
+ nale Enti Locali per la Pace e i Diritti Umani con la Rete Nazionale Scuo
+ le di Pace\n\nNote: Primo laboratorio ore 9.45\, secondo ore 11.00 · A c
+ ura di Elisabetta Parisi · Confermato anche in caso di pioggia · Portar
+ e una coperta per sedersi sull'erba\n\n— Tutti i colori della pace · X
+ XIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Parco Due Laghi\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Giro d'Italia per la pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260926-giro-temporale@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260926T153000
+DTEND;TZID=Europe/Rome:20260926T173000
+SUMMARY:In una notte di temporale
+DESCRIPTION:Giro d'Italia per la pace · Percorso sensoriale con narrazio
+ ne\n\nUn percorso esperienziale con narrazione\, dentro la storia di un l
+ upo e di una capretta che\, al riparo da un temporale\, diventano amici s
+ enza sapere chi è l'altro.\n\nA cura di: A cura del Centro Teatrale Corn
+ iani · Ispirato all'omonimo libro di Yuichi Kimura (Salani editore)\n\nN
+ ote: Due appuntamenti\, ore 15.30 e 16.30 · Per bambine e bambini dai 7 
+ ai 10 anni · Posti limitati\, prenotazione allo 0461 340654 o vezzano@bi
+ blio.tn.it\n\n— Tutti i colori della pace · XXIV edizione · Il progra
+ mma potrebbe subire variazioni.
+LOCATION:Biblioteca di Terlago\, Terlago\, Vallelaghi (TN)\, Italia
+CATEGORIES:Giro d'Italia per la pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260926-giro-empatia@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260926T210000
+DTEND;TZID=Europe/Rome:20260926T223000
+SUMMARY:Empatia. L'arte di saper abitare le emozioni
+DESCRIPTION:Giro d'Italia per la pace · Spettacolo con Andrew Faber\n\n
+ «Siate ribelli\, scegliete la gentilezza.» Uno spettacolo che intreccia
+  poesia\, racconti\, monologhi e musica dal vivo. In uno spazio intimo e 
+ condiviso ci si riconosce\, si ride\, ci si emoziona e a volte si resta i
+ n silenzio.\n\nA cura di: Con Andrew Faber (Andrea Zorretta)\, voce poeti
+ ca tra le più seguite in Italia · Al pianoforte il Maestro Carlo Valent
+ e\, vincitore dei premi «Voci per la Libertà» e «Una canzone per Amne
+ sty»\n\nNote: Ingresso libero\n\nIngresso libero.\n\n— Tutti i colori 
+ della pace · XXIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Teatro Valle dei Laghi\, Vezzano\, Vallelaghi (TN)\, Italia
+CATEGORIES:Giro d'Italia per la pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260927-sanvili@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260927T090000
+DTEND;TZID=Europe/Rome:20260927T160000
+SUMMARY:Il cammino di San Vili
+DESCRIPTION:Ecomuseo della Valle dei Laghi in cammino\n\nUn giro ad anell
+ o con partenza da Ranzo e Deggia per percorrere una tappa del Cammino di 
+ San Vili\, l'itinerario storico che collega Madonna di Campiglio a Trento
+ .\n\nA cura di: A cura dell'Ecomuseo della Valle dei Laghi\n\nNote: Parte
+ nza ore 9.00 · Distanza 12 km\, giro ad anello Ranzo–Deggia–Ranzo ·
+  Abbigliamento da trekking e pranzo al sacco · Info e prenotazioni: 333 
+ 5360188 · info@ecomuseovalledeilaghi.it\n\n— Tutti i colori della pace
+  · XXIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Ritrovo a Ranzo\, Ranzo\, Vallelaghi (TN)\, Italia
+CATEGORIES:In natura
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260929-francobollo@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260929
+DTEND;VALUE=DATE:20261011
+SUMMARY:Dalla Storia il Francobollo\, dal Francobollo la Storia
+DESCRIPTION:Mozambico 1975–1992\n\nUna mostra che ripercorre la storia 
+ del Mozambico\, dall'indipendenza del 1975 alla pace del 1992\, attravers
+ o i francobolli emessi in quegli anni.\n\nA cura di: In collaborazione co
+ n il CAM – Consorzio Associazioni Mozambico\n\n— Tutti i colori della
+  pace · XXIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Biblioteca Vallelaghi\, sede di Terlago\, Terlago\, Vallelaghi (
+ TN)\, Italia
+CATEGORIES:Mostre per la pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260929-raffaelli@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260929T203000
+DTEND;TZID=Europe/Rome:20260929T220000
+SUMMARY:Si fa presto a dire pace
+DESCRIPTION:Presentazione del libro di Mario Raffaelli (Edizioni Studium)
+ \n\nIl libro raccoglie l'esperienza diretta dell'autore nelle mediazioni 
+ internazionali\, dalle guerre in Africa Australe al Corno d'Africa e al N
+ agorno Karabakh. Mario Raffaelli è stato parlamentare e Sottosegretario 
+ agli Affari Esteri\, coordinatore dei mediatori per la pace in Mozambico 
+ con la Comunità di Sant'Egidio.\n\nA cura di: In compagnia dell'autore 
+ · A cura del CAM – Consorzio Associazioni Mozambico · Modera Marianna
+  Malpaga\, consigliera CAM\n\n— Tutti i colori della pace · XXIV edizi
+ one · Il programma potrebbe subire variazioni.
+LOCATION:Sala del parco Braidon\, Terlago\, Vallelaghi (TN)\, Italia
+CATEGORIES:Incontri e libri
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20260930-maschere@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20260930T203000
+DTEND;TZID=Europe/Rome:20260930T223000
+SUMMARY:Il villaggio delle maschere
+DESCRIPTION:Un viaggio alla scoperta del proprio volto\n\nUn laboratorio 
+ per esplorare identità e relazione a partire dalla costruzione della mas
+ chera: uno strumento antico per raccontarsi\, nascondersi e ritrovarsi.\n
+ \nA cura di: Laboratorio a cura di Antonio Simula\n\n— Tutti i colori d
+ ella pace · XXIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Galleria\, Teatro Valle dei Laghi\, Vezzano\, Vallelaghi (TN)\, 
+ Italia
+CATEGORIES:Incontri e libri
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261002-punire@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261002T173000
+DTEND;TZID=Europe/Rome:20261002T190000
+SUMMARY:Punire o riparare?
+DESCRIPTION:Presentazione del libro (Castelvecchi editore)\n\nUn attraver
+ samento vivo e inquieto delle sfide e delle ferite più profonde della gi
+ ustizia. Si può restituire dignità alle vittime senza rinunciare alla t
+ rasformazione dei colpevoli? Le pagine mettono in discussione l'automatis
+ mo della punizione e aprono alla possibilità della riparazione.\n\nA cur
+ a di: In compagnia dell'autore Ivo Lizzola\, con la psichiatra Maria Ingl
+ ese · Ivo Lizzola è professore ordinario di Pedagogia sociale all'Unive
+ rsità di Bergamo\n\nNote: In collaborazione con Arké Formazione (Riva d
+ el Garda)\n\n— Tutti i colori della pace · XXIV edizione · Il program
+ ma potrebbe subire variazioni.
+LOCATION:Sala Consiliare\, ex municipio di Padergnone\, Padergnone\, Vall
+ elaghi (TN)\, Italia
+CATEGORIES:Incontri e libri
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261003-tombola@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261003T094500
+DTEND;TZID=Europe/Rome:20261003T113000
+SUMMARY:La tombola dei libri dei diritti e della pace
+DESCRIPTION:Giochi di pace\n\nIl tradizionale gioco della tombola abbinat
+ o ai libri sulla pace e sui diritti: un modo per giocare insieme e scopri
+ re nuove storie.\n\nNote: Età consigliata: dai 5 anni · Posti limitati 
+ · Info e prenotazioni: vezzano@biblio.tn.it · 0461 340654 · Durante l'
+ evento verranno raccolti fondi di solidarietà\n\n— Tutti i colori dell
+ a pace · XXIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Sala Consiliare\, ex municipio di Padergnone\, Padergnone\, Vall
+ elaghi (TN)\, Italia
+CATEGORIES:Giochi di pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261004-cammina@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261004T093000
+DTEND;TZID=Europe/Rome:20261004T133000
+SUMMARY:Vallelaghi cammina_per la pace
+DESCRIPTION:2ª edizione · Camminata attraverso il paese\n\nUna camminat
+ a attraverso il paese per testimoniare insieme la forza della pace. Ci si
+  può unire al gruppo da uno qualsiasi dei punti di ristoro oppure raggiu
+ ngere direttamente il Parco Due Laghi\, dove la giornata si chiude con la
+  pastasciutta in musica.\n\nA cura di: Con la collaborazione delle Pro Lo
+ co · Pastasciutta con il coro Bandalarga and friends di Oasi Valle dei L
+ aghi\n\nNote: Partenza ore 9.30 dal Parco Braidon · Punti di ristoro: Ve
+ cchio Mulino / sede CTS (ore 10.30 ca.)\, piazza di Vezzano (ore 11.15 ca
+ .)\, municipio di Padergnone (ore 12.00 ca.) · Arrivo al Parco Due Laghi
+  (Padergnone) ore 13.00 ca. · In caso di pioggia rinviato a domenica 11 
+ ottobre\n\n— Tutti i colori della pace · XXIV edizione · Il programma
+  potrebbe subire variazioni.
+LOCATION:Partenza dal Parco Braidon (Terlago)\, Terlago\, Vallelaghi (TN)
+ \, Italia
+CATEGORIES:Insieme per la pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261009-vuoifarepace@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261009T173000
+DTEND;TZID=Europe/Rome:20261009T190000
+SUMMARY:Vuoi fare pace?
+DESCRIPTION:Libro-journal per ragazze e ragazzi (Multimage editrice)\n\nU
+ n journal guidato per adolescenti per migliorare la comunicazione e trasf
+ ormare i conflitti con empatia e creatività\, attraverso quiz\, esercizi
+  e riflessioni.\n\nA cura di: In compagnia di Francesca Cassarà · Un jo
+ urnal guidato di Francesca Cassarà\, Chiaralascura e Margherita Bruno\n\
+ nNote: Con InterAgiamo APS · Il 10% del prezzo del libro va in beneficen
+ za\n\n— Tutti i colori della pace · XXIV edizione · Il programma potr
+ ebbe subire variazioni.
+LOCATION:Sede di InterAgiamo\, via Braidon 10\, Terlago\, Vallelaghi (TN)
+ \, Italia
+CATEGORIES:Incontri e libri
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261010-camilla@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261010T170000
+DTEND;TZID=Europe/Rome:20261010T180000
+SUMMARY:La casetta di Camilla
+DESCRIPTION:Teatro per bambine e bambini\n\nUn viaggio in una vera casa 
+ — con cucina\, bagno e stanza degli ospiti — solo che è piccola picc
+ ola e viaggia su un carrello. Ed è piena zeppa di storie che accompagnan
+ o i bambini in mondi immaginari\, comici e poetici.\n\nA cura di: Di e co
+ n Camilla da Vico · Testo e regia di Giacomo Anderle · Musiche di Nicol
+ a Straffelini · Produzione Finisterrae Teatri\n\nNote: Ingresso libero 
+ · Età consigliata: dai 3 ai 7 anni\n\nIngresso libero.\n\n— Tutti i c
+ olori della pace · XXIV edizione · Il programma potrebbe subire variazi
+ oni.
+LOCATION:Teatro di Padergnone\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Teatro
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261012-traduemondi@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261012T203000
+DTEND;TZID=Europe/Rome:20261012T223000
+SUMMARY:Tra due mondi
+DESCRIPTION:Cineforum\n\nA Caen\, in Normandia\, Marianne cerca lavoro co
+ me domestica dopo la separazione dal marito. Tra uffici di collocamento e
+  turni sui traghetti incontra altre lavoratrici che provengono da storie 
+ di emarginazione economica e sociale\, ma che sanno fare squadra e darsi 
+ una mano. Un film su disoccupazione\, precariato e sfruttamento.\n\nA cur
+ a di: Di Emmanuel Carrère\, 2022\, con Juliette Binoche\n\nNote: In comp
+ agnia di Cecilia Salizzoni\n\n— Tutti i colori della pace · XXIV edizi
+ one · Il programma potrebbe subire variazioni.
+LOCATION:Teatro di Padergnone\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Cineforum
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261014-guerraosalute@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261014T203000
+DTEND;TZID=Europe/Rome:20261014T220000
+SUMMARY:Guerra o salute
+DESCRIPTION:Dalle evidenze scientifiche alla promozione della pace (Il Pe
+ nsiero Scientifico editore)\n\nL'epidemiologo analizza i conflitti da un 
+ punto di vista sanitario e\, basandosi sulle evidenze scientifiche\, pref
+ igura un percorso verso un mondo più pacifico e resiliente\, con salute 
+ e benessere per tutti. L'epidemiologia può contribuire a colmare il vuot
+ o informativo sull'impatto della guerra su salute e ambiente.\n\nA cura d
+ i: In compagnia del dottor Pirous Fateh-Moghadam\, epidemiologo del Dipar
+ timento di Prevenzione dell'APSS di Trento e coordinatore del gruppo di l
+ avoro AIE per la promozione della pace\n\n— Tutti i colori della pace 
+ · XXIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Sala del parco Braidon\, Terlago\, Vallelaghi (TN)\, Italia
+CATEGORIES:Incontri e libri
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261017-orizzonti@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261017T173000
+DTEND;TZID=Europe/Rome:20261017T190000
+SUMMARY:Orizzonti
+DESCRIPTION:Presentazione del libro di Laura Targa (Edizioni Del Faro)\n\
+ nPoesie e testi che esplorano orizzonti interiori e sensazioni personali\
+ , in una danza con la Terra\, il mare e il cielo. Raccontano la gioia e l
+ a sofferenza delle donne che vogliono cambiare\, amare e credere nella sp
+ eranza.\n\nA cura di: Con i frammenti visivi di Cristina Zanella e gli in
+ termezzi musicali di Ester Wegher\n\n— Tutti i colori della pace · XXI
+ V edizione · Il programma potrebbe subire variazioni.
+LOCATION:Foyer del Teatro Valle dei Laghi\, Vezzano\, Vallelaghi (TN)\, I
+ talia
+CATEGORIES:Reti di pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261018-deledda@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261018T173000
+DTEND;TZID=Europe/Rome:20261018T190000
+SUMMARY:Omaggio a Grazia Deledda
+DESCRIPTION:Con il Gruppo Culturale «Nereo Cesare Garbari»\n\nGrazia De
+ ledda ha vinto il Premio Nobel per la letteratura nel 1926\, prima e unic
+ a donna italiana. Nelle sue opere è forte la critica alla discriminazion
+ e delle donne e alle diseguaglianze sociali\, e l'anelito alla pace inter
+ iore che nasce dalla riconciliazione con se stessi\, la comunità e la na
+ tura.\n\nA cura di: In compagnia di Silvana Poli\n\n— Tutti i colori de
+ lla pace · XXIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Sala Consiliare\, ex municipio di Padergnone\, Padergnone\, Vall
+ elaghi (TN)\, Italia
+CATEGORIES:Omaggio
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261019-esserecomunita@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261019T203000
+DTEND;TZID=Europe/Rome:20261019T220000
+SUMMARY:Essere comunità
+DESCRIPTION:Buon compleanno Vallelaghi · Riflessioni in forma di dialogo
+ \n\nNel decimo anniversario dell'istituzione del Comune di Vallelaghi\, u
+ n dialogo con esperti sullo sviluppo del territorio e delle comunità: co
+ sa significa\, oggi\, essere comunità.\n\nA cura di: Modera Giancarlo Sc
+ iascia\, manager culturale\n\n— Tutti i colori della pace · XXIV edizi
+ one · Il programma potrebbe subire variazioni.
+LOCATION:Foyer del Teatro Valle dei Laghi\, Vezzano\, Vallelaghi (TN)\, I
+ talia
+CATEGORIES:Approfondimenti
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261021-quadernoarmeno@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261021T203000
+DTEND;TZID=Europe/Rome:20261021T220000
+SUMMARY:Quaderno Armeno
+DESCRIPTION:Presentazione del libro (Nous editrice)\n\nA Yerevan\, capita
+ le dell'Armenia indipendente\, la protagonista viene accolta da un clan d
+ i profughi della guerra del Nagorno Karabakh\, ospiti in un albergo fatis
+ cente. Un diario-racconto di straordinaria efficacia descrittiva\, capace
+  di scavare nel proprio mondo e in quello dell'altro.\n\nA cura di: In co
+ mpagnia di Sara Maino\n\n— Tutti i colori della pace · XXIV edizione 
+ · Il programma potrebbe subire variazioni.
+LOCATION:Sala del parco Braidon\, Terlago\, Vallelaghi (TN)\, Italia
+CATEGORIES:Incontri e libri
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261022-nonviolenti@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261022T203000
+DTEND;TZID=Europe/Rome:20261022T220000
+SUMMARY:Difendere la pace con mezzi non violenti
+DESCRIPTION:I costi della difesa armata e i vantaggi del peacebuilding ci
+ vile\n\nUn confronto sui costi della difesa armata e sui vantaggi degli i
+ nterventi civili di pace: formazione ai diritti umani\, nonviolenza e str
+ umenti concreti di peacebuilding.\n\nA cura di: Con Martina Pignatti Mora
+ no (Fondazione Finanza Etica\, Rete Italiana Pace e Disarmo) e Massimilia
+ no Pilati (Movimento Nonviolento\, già presidente del Forum trentino per
+  la Pace)\n\n— Tutti i colori della pace · XXIV edizione · Il program
+ ma potrebbe subire variazioni.
+LOCATION:Teatro di Padergnone\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Approfondimenti
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261024-costituzione@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261024T180000
+DTEND;TZID=Europe/Rome:20261024T220000
+SUMMARY:Consegna della Costituzione ai neodiciottenni
+DESCRIPTION:Buon compleanno Vallelaghi · a seguire\, cena di festa per l
+ a comunità\n\nLa consegna della Costituzione alle diciottenni e ai dicio
+ ttenni del Comune\, alla presenza del Consiglio Comunale. A seguire\, la 
+ cena di festa per tutta la comunità preparata dalle associazioni del ter
+ ritorio.\n\nA cura di: Alla presenza del Consiglio Comunale · Cena a cur
+ a delle Associazioni del territorio\n\n— Tutti i colori della pace · X
+ XIV edizione · Il programma potrebbe subire variazioni.
+LOCATION:Foyer del Teatro Valle dei Laghi\, Vezzano\, Vallelaghi (TN)\, I
+ talia
+CATEGORIES:Insieme per la pace
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261026-chiara@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261026T203000
+DTEND;TZID=Europe/Rome:20261026T223000
+SUMMARY:Chiara
+DESCRIPTION:Cineforum\n\n1211. Chiara\, ragazza di buona famiglia\, lasci
+ a la casa del padre per seguire il percorso di Francesco d'Assisi. Un fil
+ m sulla dimensione comunitaria e solidale che nasce intorno a lei\, che r
+ ifiuta ogni gerarchia proclamando «qui non ci sono serve».\n\nA cura di
+ : Di Susanna Nicchiarelli\, 2022 (01 Distribution)\, con Margherita Mazzu
+ cco\n\nNote: Ingresso libero · In compagnia di Cecilia Salizzoni\n\nIngr
+ esso libero.\n\n— Tutti i colori della pace · XXIV edizione · Il prog
+ ramma potrebbe subire variazioni.
+LOCATION:Teatro di Padergnone\, Padergnone\, Vallelaghi (TN)\, Italia
+CATEGORIES:Cineforum
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:20261028-paceinscena@tuttiicoloridellapace.vallelaghi
+DTSTAMP:20260101T000000Z
+DTSTART;TZID=Europe/Rome:20261028T203000
+DTEND;TZID=Europe/Rome:20261028T223000
+SUMMARY:La pace in scena
+DESCRIPTION:Microfono aperto di poesia\, per la giustizia e l'equità\n\n
+ Uno spazio aperto a tutte e tutti coloro che desiderano leggere ad alta v
+ oce\, ascoltare e condividere poesie\, brani letterari e brevi racconti d
+ edicati ai temi della pace\, dei diritti e dell'equità.\n\nA cura di: A 
+ cura di Poetry Slam Trento · Con l'Orchestra Fuoritempo diretta da Elena
+  Faes\n\n— Tutti i colori della pace · XXIV edizione · Il programma p
+ otrebbe subire variazioni.
+LOCATION:Foyer del Teatro Valle dei Laghi\, Vezzano\, Vallelaghi (TN)\, I
+ talia
+CATEGORIES:Insieme per la pace
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
