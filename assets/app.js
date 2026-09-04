@@ -25,6 +25,7 @@
     month: "",
     cats: new Set(),        // vuoto = tutte
     view: "list",           // "list" | "calendar"
+    ev: null,               // id evento con la modale aperta (per i link condivisibili)
   };
 
   /* ---------- utilità date ---------- */
@@ -196,7 +197,8 @@
         "</div>" +
         (ev.description ? '<p class="event-desc">' + esc(clip(ev.description, 200)) + "</p>" : "") +
         '<div class="event-actions">' +
-          '<button type="button" class="mini-btn" data-act="ics">＋ Calendario</button>' +
+          '<button type="button" class="mini-btn" data-act="cal">＋ Calendario</button>' +
+          '<button type="button" class="mini-btn" data-act="share">Condividi</button>' +
           '<button type="button" class="mini-btn" data-act="open">Dettagli</button>' +
         "</div>" +
       "</div>" +
@@ -206,7 +208,13 @@
 
     art.addEventListener("click", function (e) {
       var act = e.target.closest("[data-act]");
-      if (act && act.dataset.act === "ics") { e.stopPropagation(); downloadICS([ev], "evento-" + ev.id); return; }
+      if (act) {
+        e.stopPropagation();
+        if (act.dataset.act === "cal") calendarMenu(ev, act);
+        else if (act.dataset.act === "share") shareMenu(shareTextEvent(ev), act);
+        else openDialog(ev);
+        return;
+      }
       openDialog(ev);
     });
     art.addEventListener("keydown", function (e) {
@@ -327,13 +335,18 @@
      ======================================================================= */
   var dlg = document.getElementById("eventDialog");
   document.getElementById("dialogClose").addEventListener("click", closeDialog);
-  dlg.addEventListener("click", function (e) {                // click sullo sfondo
-    var r = dlg.getBoundingClientRect();
-    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeDialog();
+  dlg.addEventListener("click", function (e) {                // click sullo sfondo (::backdrop)
+    if (e.target === dlg && !_pop) closeDialog();
   });
-  dlg.addEventListener("cancel", function (e) { e.preventDefault(); closeDialog(); });
+  dlg.addEventListener("cancel", function (e) {
+    e.preventDefault();
+    if (_pop) { closePopover(); return; }   // Esc chiude prima il menù, poi la scheda
+    closeDialog();
+  });
 
   function openDialog(ev) {
+    if (state.ev !== ev.id) { state.ev = ev.id; syncURL(); }
+
     var when = ev.dateEnd
       ? "Da " + itLongDate(ev._startISO) + " a " + itLongDate(ev._endISO)
       : itLongDate(ev._startISO) + (ev._hasTime ? " · ore " + itTime(ev.start.split("T")[1]) : "");
@@ -360,20 +373,24 @@
         (ev.description ? '<p class="d-desc">' + esc(ev.description) + "</p>" : "") +
       "</div>" +
       '<div class="dialog-actions">' +
-        '<button type="button" class="btn btn-solid" data-dlg="ics">＋ Aggiungi al calendario (.ics)</button>' +
-        '<a class="btn btn-ghost" data-dlg="maps" target="_blank" rel="noopener"' +
+        '<button type="button" class="btn btn-solid" data-dlg="cal">＋ Aggiungi al calendario</button>' +
+        '<button type="button" class="btn btn-ghost" data-dlg="share">Condividi</button>' +
+        '<a class="btn btn-ghost" target="_blank" rel="noopener"' +
           ' href="https://www.google.com/maps/search/?api=1&query=' +
-          encodeURIComponent(ev.venue + ", " + (ev.locality || "Vallelaghi") + ", Vallelaghi TN, Italia") +
+          encodeURIComponent(evLocation(ev)) +
           '">Apri in Google Maps</a>' +
       "</div>";
 
-    document.getElementById("dialogBody").querySelector('[data-dlg="ics"]')
-      .addEventListener("click", function () { downloadICS([ev], "evento-" + ev.id); });
+    var db = document.getElementById("dialogBody");
+    db.querySelector('[data-dlg="cal"]').addEventListener("click", function () { calendarMenu(ev, this); });
+    db.querySelector('[data-dlg="share"]').addEventListener("click", function () { shareMenu(shareTextEvent(ev), this); });
 
     if (typeof dlg.showModal === "function") dlg.showModal();
     else dlg.setAttribute("open", "");
   }
   function closeDialog() {
+    closePopover();
+    if (state.ev) { state.ev = null; syncURL(); }
     if (typeof dlg.close === "function" && dlg.open) dlg.close();
     else dlg.removeAttribute("open");
   }
@@ -567,6 +584,7 @@
       if (state.month) q.set("mese", state.month);
       if (state.cats.size) q.set("cat", Array.from(state.cats).join(","));
       if (state.view !== "list") q.set("vista", state.view);
+      if (state.ev) q.set("ev", state.ev);
       var s = q.toString();
       history.replaceState(null, "", s ? "#/?" + s : location.pathname + location.search);
     } catch (e) { /* no-op */ }
@@ -581,6 +599,7 @@
       if (q.get("mese")) state.month = q.get("mese");
       if (q.get("cat")) q.get("cat").split(",").forEach(function (c) { if (CATS[c]) state.cats.add(c); });
       if (q.get("vista") === "calendar") state.view = "calendar";
+      if (q.get("ev")) state.ev = q.get("ev");
     } catch (e) { /* no-op */ }
   }
   function applyStateToControls() {
@@ -603,6 +622,181 @@
   function clip(s, n) { s = String(s || ""); return s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s; }
   function debounce(fn, ms) {
     var t; return function () { clearTimeout(t); var a = arguments, c = this; t = setTimeout(function () { fn.apply(c, a); }, ms); };
+  }
+
+  /* =======================================================================
+     CONDIVIDI  +  APRI NEL CALENDARIO (Google / Outlook / .ics)
+     ======================================================================= */
+  function capFirst(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+  function pad2(n) { return String(n).padStart(2, "0"); }
+  function shortDow(isoStr) {
+    var a = isoStr.split("-").map(Number);
+    return GIORNI[new Date(a[0], a[1] - 1, a[2]).getDay()].slice(0, 3);
+  }
+  function baseURL() { return location.href.split("#")[0]; }
+  function shareURL(ev) { return baseURL() + "#/?ev=" + encodeURIComponent(ev.id); }
+
+  function whenShort(ev) {
+    if (ev.dateEnd) return itShortDate(ev._startISO) + "–" + itShortDate(ev._endISO);
+    return shortDow(ev._startISO) + " " + itShortDate(ev._startISO) +
+      (ev._hasTime ? " ore " + itTime(ev.start.split("T")[1]) : "");
+  }
+  function shareTextEvent(ev) {
+    return "🕊️ " + META.title + " · " + META.edition + "\n" +
+      ev.title + (ev.subtitle ? " — " + ev.subtitle : "") + "\n" +
+      capFirst(whenShort(ev)) + " · " + ev.venue + (ev.locality ? ", " + ev.locality : "") + "\n" +
+      shareURL(ev);
+  }
+  function shareTextView() {
+    var list = filtered();
+    var filt = state.cats.size || state.q || state.locality || state.month;
+    var lines = ["🕊️ " + META.title + " — " + META.edition];
+    lines.push(filt
+      ? "Programma · " + filterSummary() + " (" + list.length + " eventi)"
+      : META.rangeLabel + " · Vallelaghi (TN)");
+    list.slice(0, 8).forEach(function (ev) { lines.push("• " + whenShort(ev) + " — " + ev.title); });
+    if (list.length > 8) lines.push("…e altri " + (list.length - 8) + " appuntamenti");
+    lines.push(location.href);
+    return lines.join("\n");
+  }
+
+  function endParts(ev) {
+    var p = parts(ev.start);
+    if (ev.end) return parts(ev.end);
+    var d = new Date(p.y, p.m - 1, p.d, p.hh + 2, p.mm);
+    return { y: d.getFullYear(), m: d.getMonth() + 1, d: d.getDate(), hh: d.getHours(), mm: d.getMinutes() };
+  }
+  function evDetails(ev) {
+    var d = [];
+    if (ev.subtitle) d.push(ev.subtitle);
+    if (ev.description) d.push(ev.description);
+    if (ev.credits) d.push("A cura di: " + ev.credits);
+    if (ev.info) d.push(ev.info);
+    d.push(shareURL(ev));
+    return d.join("\n\n");
+  }
+  function evLocation(ev) {
+    return ev.venue + (ev.locality ? ", " + ev.locality : "") + ", Vallelaghi (TN), Italia";
+  }
+  function gcalUrl(ev) {
+    var dates;
+    if (ev._hasTime) {
+      var p = parts(ev.start), e = endParts(ev);
+      var f = function (x) { return x.y + pad2(x.m) + pad2(x.d) + "T" + pad2(x.hh) + pad2(x.mm) + "00"; };
+      dates = f(p) + "/" + f(e);
+    } else {
+      dates = ev._startISO.replace(/-/g, "") + "/" + addDaysISO(ev._endISO, 1).replace(/-/g, "");
+    }
+    var u = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+      "&text=" + encodeURIComponent(ev.title) +
+      "&dates=" + dates +
+      "&details=" + encodeURIComponent(evDetails(ev)) +
+      "&location=" + encodeURIComponent(evLocation(ev));
+    if (ev._hasTime) u += "&ctz=Europe/Rome";
+    return u;
+  }
+  function outlookUrl(ev) {
+    var u = "https://outlook.live.com/calendar/0/action/compose?rru=addevent" +
+      "&subject=" + encodeURIComponent(ev.title) +
+      "&body=" + encodeURIComponent(evDetails(ev)) +
+      "&location=" + encodeURIComponent(evLocation(ev));
+    if (ev._hasTime) {
+      var p = parts(ev.start), e = endParts(ev);
+      var iso = function (x) { return x.y + "-" + pad2(x.m) + "-" + pad2(x.d) + "T" + pad2(x.hh) + ":" + pad2(x.mm) + ":00"; };
+      u += "&startdt=" + iso(p) + "&enddt=" + iso(e);
+    } else {
+      u += "&allday=true&startdt=" + ev._startISO + "&enddt=" + addDaysISO(ev._endISO, 1);
+    }
+    return u;
+  }
+
+  /* ---- toast + copia negli appunti ---- */
+  function toast(msg) {
+    var t = document.getElementById("toast");
+    if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; document.body.appendChild(t); }
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(t._h);
+    t._h = setTimeout(function () { t.classList.remove("show"); }, 2400);
+  }
+  function copyText(text) {
+    var ok = function () { toast("Testo copiato negli appunti"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, function () { legacyCopy(text, ok); });
+    } else legacyCopy(text, ok);
+  }
+  function legacyCopy(text, ok) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:-1000px;opacity:0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); ok(); } catch (e) { toast("Copia non riuscita"); }
+    ta.remove();
+  }
+
+  /* ---- popover (menù ancorato a un pulsante) ---- */
+  var _pop = null;
+  function closePopover() {
+    if (!_pop) return;
+    _pop.remove(); _pop = null;
+    document.removeEventListener("click", _popOutside, true);
+    document.removeEventListener("keydown", _popKey, true);
+    window.removeEventListener("resize", closePopover);
+  }
+  function _popOutside(e) { if (_pop && !_pop.contains(e.target)) closePopover(); }
+  function _popKey(e) { if (e.key === "Escape") { e.stopPropagation(); closePopover(); } }
+  function openPopover(anchor, items) {
+    closePopover();
+    var pop = document.createElement("div");
+    pop.className = "popover";
+    items.forEach(function (it) {
+      var el;
+      if (it.href) {
+        el = document.createElement("a");
+        el.href = it.href; el.target = "_blank"; el.rel = "noopener";
+        el.addEventListener("click", function () { setTimeout(closePopover, 0); });
+      } else {
+        el = document.createElement("button");
+        el.type = "button";
+        el.addEventListener("click", function () { closePopover(); it.onClick(); });
+      }
+      el.className = "popover-item";
+      el.textContent = it.label;
+      pop.appendChild(el);
+    });
+    (dlg.open ? dlg : document.body).appendChild(pop);
+    var r = anchor.getBoundingClientRect();
+    var pw = pop.offsetWidth, ph = pop.offsetHeight;
+    var vw = document.documentElement.clientWidth, vh = document.documentElement.clientHeight;
+    var left = Math.max(8, Math.min(r.left, vw - pw - 8));
+    var top = r.bottom + 6;
+    if (top + ph > vh - 8) top = r.top - ph - 6;          // non ci sta sotto: apri sopra
+    top = Math.max(8, Math.min(top, vh - ph - 8));         // comunque dentro lo schermo
+    pop.style.left = left + "px";
+    pop.style.top = top + "px";
+    _pop = pop;
+    setTimeout(function () {
+      document.addEventListener("click", _popOutside, true);
+      document.addEventListener("keydown", _popKey, true);
+      window.addEventListener("resize", closePopover);
+    }, 0);
+  }
+
+  function calendarMenu(ev, anchor) {
+    openPopover(anchor, [
+      { label: "Google Calendar", href: gcalUrl(ev) },
+      { label: "Outlook.com", href: outlookUrl(ev) },
+      { label: "Scarica .ics (Apple, Outlook…)", onClick: function () { downloadICS([ev], "evento-" + ev.id); } },
+    ]);
+  }
+  function shareMenu(text, anchor) {
+    if (navigator.share) { navigator.share({ title: META.title, text: text }).catch(function () {}); return; }
+    openPopover(anchor, [
+      { label: "WhatsApp", href: "https://wa.me/?text=" + encodeURIComponent(text) },
+      { label: "Telegram", href: "https://t.me/share/url?url=" + encodeURIComponent(location.href) + "&text=" + encodeURIComponent(text) },
+      { label: "E-mail", href: "mailto:?subject=" + encodeURIComponent(META.title + " · " + META.edition) + "&body=" + encodeURIComponent(text) },
+      { label: "Copia testo", onClick: function () { copyText(text); } },
+    ]);
   }
 
   /* =======================================================================
@@ -636,7 +830,9 @@
       var tag = state.cats.size === 1 ? "-" + Array.from(state.cats)[0] : (state.cats.size ? "-selezione" : "");
       downloadICS(list, "tutti-i-colori-della-pace-2026" + tag);
     });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDialog(); });
+    var sv = document.getElementById("shareViewBtn");
+    sv.addEventListener("click", function () { shareMenu(shareTextView(), sv); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closePopover(); closeDialog(); } });
   }
 
   /* =======================================================================
@@ -649,4 +845,10 @@
   applyStateToControls();
   wireEvents();
   setView(state.view);   // esegue render()
+
+  // link condivisibile a un evento: #/?ev=<id> apre la scheda
+  if (state.ev) {
+    var _deep = EVENTS.find(function (e) { return e.id === state.ev; });
+    if (_deep) openDialog(_deep); else { state.ev = null; syncURL(); }
+  }
 })();

@@ -10,7 +10,9 @@ Dati e testi ricavati dall'opuscolo ufficiale del festival
 
 - **Calendario** in due viste: **Elenco** (per giorno) e **Calendario** (griglia mensile settembre / ottobre 2026).
 - **Filtri**: per **categoria** (chip multi-selezione), per **luogo/frazione**, per **mese**, e ricerca a testo libero (titolo, sede, ospiti…). Lo stato dei filtri finisce nell'URL, quindi i link sono condivisibili (es. `#/?cat=teatro,cineforum`).
-- **Esporta in `.ics`**: pulsante *«Esporta calendario (.ics)»* — genera al volo un file iCalendar con **gli eventi attualmente filtrati** (fuso `Europe/Rome`, con `VTIMEZONE`, mostre come eventi *all-day* multi-giorno). Ogni scheda evento ha anche il suo *«＋ Calendario»* per il singolo appuntamento.
+- **Aggiungi al calendario**: su ogni evento il menù *«＋ Calendario»* offre **Google Calendar** e **Outlook.com** (si aprono con l'evento già compilato, senza download) e lo **scarica `.ics`** per Apple Calendar / Outlook desktop.
+- **Esporta in `.ics`**: pulsante *«Esporta calendario (.ics)»* — genera al volo un file iCalendar con **gli eventi attualmente filtrati** (fuso `Europe/Rome`, con `VTIMEZONE`, mostre come eventi *all-day* multi-giorno).
+- **Condividi**: sul singolo evento e sulla vista filtrata. Usa la condivisione nativa del dispositivo (`navigator.share`: WhatsApp, Telegram, Mail…) con testo e link pronti; se non disponibile, menù di ripiego WhatsApp / Telegram / E-mail / «copia testo». Link diretto a un evento: `#/?ev=<id-evento>` apre la sua scheda.
 - **Esporta in PDF**: pulsante *«Stampa / Salva PDF»* → apre la finestra di stampa del browser con un foglio di stile dedicato (programma pulito, giorno per giorno). Da lì «Salva come PDF».
 - **Immagini degli eventi**: le foto/locandine dei singoli appuntamenti sono estratte dall'opuscolo PDF (in `assets/eventi/`), mostrate come miniatura nella scheda e a piena larghezza nel dettaglio. 6 eventi senza foto nell'opuscolo restano solo testo.
 - **Saluto dell'amministrazione**: il testo introduttivo dell'assessora (dall'opuscolo) è nella sezione richiudibile sotto la testata; il testo è in `TCDP.meta.intro` dentro `data.js`.
