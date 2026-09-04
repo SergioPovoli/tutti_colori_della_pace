@@ -12,23 +12,28 @@ Dati e testi ricavati dall'opuscolo ufficiale del festival
 - **Filtri**: per **categoria** (chip multi-selezione), per **luogo/frazione**, per **mese**, e ricerca a testo libero (titolo, sede, ospiti…). Lo stato dei filtri finisce nell'URL, quindi i link sono condivisibili (es. `#/?cat=teatro,cineforum`).
 - **Esporta in `.ics`**: pulsante *«Esporta calendario (.ics)»* — genera al volo un file iCalendar con **gli eventi attualmente filtrati** (fuso `Europe/Rome`, con `VTIMEZONE`, mostre come eventi *all-day* multi-giorno). Ogni scheda evento ha anche il suo *«＋ Calendario»* per il singolo appuntamento.
 - **Esporta in PDF**: pulsante *«Stampa / Salva PDF»* → apre la finestra di stampa del browser con un foglio di stile dedicato (programma pulito, giorno per giorno). Da lì «Salva come PDF».
+- **Immagini degli eventi**: le foto/locandine dei singoli appuntamenti sono estratte dall'opuscolo PDF (in `assets/eventi/`), mostrate come miniatura nella scheda e a piena larghezza nel dettaglio. 6 eventi senza foto nell'opuscolo restano solo testo.
+- **Saluto dell'amministrazione**: il testo introduttivo dell'assessora (dall'opuscolo) è nella sezione richiudibile sotto la testata; il testo è in `TCDP.meta.intro` dentro `data.js`.
+- **Mappa**: il pulsante *«Apri in Google Maps»* nel dettaglio evento apre `google.com/maps` sull'indirizzo (sede + frazione + Vallelaghi TN).
 - **Opuscolo originale** in PDF scaricabile ([`assets/opuscolo-tutti-i-colori-della-pace-2026.pdf`](assets/opuscolo-tutti-i-colori-della-pace-2026.pdf)).
 - **Calendario completo `.ics` statico** (`calendario-tutti-i-colori-della-pace-2026.ics`) — URL stabile, adatto anche all'abbonamento (`webcal://`).
 - Colori e identità visiva ripresi dalla locandina (fondo crema, fascia arcobaleno, ottanio, accenti a mano). Responsive, accessibile da tastiera, `prefers-reduced-motion`.
 
 ## Struttura
 
-```
+```text
 index.html                     pagina unica
 assets/
   styles.css                   stile + regole @media print
-  app.js                       calendario, filtri, export .ics, stampa
+  app.js                       calendario, filtri, export .ics, stampa, modale
   data.js                      IL PROGRAMMA (window.TCDP: meta, categorie, eventi)
+  eventi/<id-evento>.png       foto/locandine estratte dall'opuscolo (21 eventi)
   locandina-cover.webp         immagine di copertina
   opuscolo-...-2026.pdf         opuscolo ufficiale (scaricabile dal sito)
   favicon.svg
 calendario-...-2026.ics        calendario completo statico
 scripts/gen-ics.js             rigenera il .ics statico da data.js
+scripts/estrai-immagini.mjs    ri-estrae pagine e immagini dall'opuscolo (richiede `npm i mupdf`)
 .nojekyll                      evita l'elaborazione Jekyll su GitHub Pages
 ```
 
@@ -53,6 +58,7 @@ Tutto il contenuto è in **`assets/data.js`**. Ogni evento:
   venue: "Teatro di Padergnone",
   locality: "Padergnone",           // Vezzano | Padergnone | Terlago | Ranzo | ...
   free: true,                       // mostra il bollino "ingresso libero"
+  image: "assets/eventi/20261012-traduemondi.png",  // facoltativo
   info: "…",                        // note pratiche (età, prenotazioni)
   credits: "…",                     // "a cura di"
   description: "…"
@@ -60,6 +66,12 @@ Tutto il contenuto è in **`assets/data.js`**. Ogni evento:
 ```
 
 Le **categorie** (etichetta + colore) sono in `TCDP.categories` nello stesso file.
+Il **saluto dell'assessora** è in `TCDP.meta.intro` (`by` + `paragraphs`).
+
+Per **aggiungere/rifare le immagini**: `npm i mupdf` poi `node scripts/estrai-immagini.mjs`;
+guarda `scripts/_estratte/pages/` per capire quale immagine va con quale evento,
+rinomina il file scelto `<id-evento>.png`, mettilo in `assets/eventi/` e aggiungi
+`image:` nell'evento in `data.js`.
 
 Dopo aver modificato `data.js`, rigenera il `.ics` statico:
 

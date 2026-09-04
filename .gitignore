@@ -1,4 +1,9 @@
-/.nojekyll
 /.vscode
 /5647e0e6f58efc36e5823910b2543e11.webp
 /WEB_Opuscolo_tutti+i+colori+della+pace+2026.pdf
+
+# artefatti di sviluppo (script immagini)
+/node_modules
+/scripts/_estratte
+
+# NB: .nojekyll va invece committato, serve a GitHub Pages
