@@ -1,5 +1,9 @@
 # Tutti i colori della pace — XXIV edizione (2026)
 
+https://sergiopovoli.github.io/tutti_colori_della_pace/
+
+
+
 Sito statico (solo **HTML + CSS + JavaScript**, nessun framework, nessuna build) con il
 **calendario del festival** di Vallelaghi / Valle dei Laghi (TN).
 
