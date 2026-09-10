@@ -87,26 +87,6 @@ node scripts/gen-ics.js
 
 (serve solo per il file scaricabile stabile; l'export dal pulsante è sempre aggiornato).
 
-## Pubblicare su GitHub Pages
-
-1. Crea un repository su GitHub e caricaci il contenuto di questa cartella:
-   ```
-   git init
-   git add .
-   git commit -m "Sito calendario Tutti i colori della pace 2026"
-   git branch -M main
-   git remote add origin https://github.com/<utente>/<repo>.git
-   git push -u origin main
-   ```
-2. Su GitHub: **Settings → Pages → Build and deployment → Source: _Deploy from a branch_**,
-   branch **`main`**, cartella **`/ (root)`**. Salva.
-3. Dopo un minuto il sito è online su `https://<utente>.github.io/<repo>/`.
-
-Nessuna configurazione aggiuntiva: è tutto statico. Il file `.nojekyll` è già incluso.
-Funziona anche aperto in locale con un semplice server statico
-(`python -m http.server` oppure `npx serve`); aprendo `index.html` con `file://`
-la pagina si vede ma alcuni browser bloccano il download di `.ics`/PDF.
-
 ## Nota
 
 Programma suscettibile di variazioni — Info: **0461 340654** · **vezzano@biblio.tn.it**.
